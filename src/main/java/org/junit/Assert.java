@@ -955,4 +955,8 @@ public class Assert {
             Matcher<? super T> matcher) {
         MatcherAssert.assertThat(reason, actual, matcher);
     }
+    
+    public static <T> int assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
+        return comparator.compare(o1, o2);
+    }
 }
