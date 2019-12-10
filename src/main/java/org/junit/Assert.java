@@ -1031,4 +1031,9 @@ public class Assert {
     private static String buildPrefix(String message) {
         return message != null && message.length() != 0 ? message + ": " : "";
     }
+    
+    public static <T> boolean comparePrimitives(T o1, T o2){
+        return o1 == o2;
+  }
+    
 }
