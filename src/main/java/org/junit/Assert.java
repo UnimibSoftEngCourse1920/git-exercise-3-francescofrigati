@@ -120,7 +120,27 @@ public class Assert {
             failNotEquals(message, expected, actual);
         }
     }
-
+    
+    public static void assertGreaterThan(Object o1, Object o2, Comparator<Object> comparator) {
+        if (comparator.compare(o1, o2) < 0)
+        {
+            System.out.print(false);
+        }
+        {
+            System.out.print(true);
+        }
+    }
+   
+    
+    public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
+        if (comparator.compare(o1, o2)>0) {
+            System.out.print(true);
+        }
+        else {
+            System.out.print(false);
+        }
+    }
+    
     private static boolean equalsRegardingNull(Object expected, Object actual) {
         if (expected == null) {
             return actual == null;
@@ -963,7 +983,6 @@ public class Assert {
             Matcher<? super T> matcher) {
         MatcherAssert.assertThat(reason, actual, matcher);
     }
-<<<<<<< HEAD
 
     /**
      * Asserts that {@code runnable} throws an exception of type {@code expectedThrowable} when
@@ -1032,15 +1051,4 @@ public class Assert {
     private static String buildPrefix(String message) {
         return message != null && message.length() != 0 ? message + ": " : "";
     }
-    
-    public static <T> boolean comparePrimitives(T o1, T o2){
-        return o1 == o2;
-  }
-    
-=======
-    
-    public static <T> int assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
-        return comparator.compare(o1, o2);
-    }
->>>>>>> refs/heads/greater
 }
